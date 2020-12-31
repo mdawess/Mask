@@ -25,7 +25,8 @@ ds_test /= 255
 
 # Defining the model
 model = keras.models.Sequential()
-model.add(keras.layers.Dense(512, input_dim=1024, activation='relu',))
+model.add(keras.layers.Flatten())
+model.add(keras.layers.Dense(512, activation='relu',))
 model.add(keras.layers.Dense(256, activation='relu'))
 model.add(keras.layers.Dense(2, activation='sigmoid'))
 
@@ -35,8 +36,4 @@ model.compile(optimizer='adam',
               metrics=['accuracy'])
 
 # Fitting the model
-"""
-Need to find a set of images with the mask on wrong to train the
-model properly as well as to have propoer X and Y data.
-"""
-# model.fit(train_images)
+model.fit(ds_train, training_labels, epochs=5, batch_size=32)

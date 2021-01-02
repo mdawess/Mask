@@ -34,3 +34,20 @@ pyplot.show()
 
 # _, accuracy = model.evaluate(x, y)
 # print('Accuracy: %.2f' % (accuracy*100))
+
+"""Original, unformatted code for main.py"""
+
+# Loading in the training and testing data (x and y var for each)
+# ds_train = trainingData("training_set")  # x variable
+# ds_test = trainingData("testing_set")
+# training_labels = trainingLabels("training_set")  # y variable
+# testing_labels = trainingLabels("testing_set")
+
+# Converting to float values from integers
+# ds_train = ds_train.astype('float32').reshape((1004, 400, 400, 1))
+# ds_test = ds_test.astype('float32').reshape((358, 400, 400, 1))
+# print(ds_train.shape, ds_test.shape)
+
+# Scaling values to be between 0 and 1 for performance
+# ds_train /= 255
+# ds_test /= 255

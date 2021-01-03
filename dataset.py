@@ -51,7 +51,43 @@ def trainingLabels(folder):
     return onehot_encoded
 
 
-# x = trainingData("training_set")
+def getData(folder):
+    """Pulls the filenames from the folder, randomizes them, then
+    proceeds to go through the list and gather the images (x data)
+    and the labels (y data) and returns both in that order.
+     """
+    files = [f for f in listdir(folder)]
+    random_files = np.random.choice(files, int(len(files)))
+
+    trainingImages = []
+    labels = []
+    i = 0
+    for filename in random_files:
+        # load image
+        img_data = image.imread(folder + '/' + filename)
+        # store loaded image
+        trainingImages.append(img_data)
+
+        # Gets each filename from folder and removes the # at the end
+        parsed = ''.join([i for i in filename if not i.isdigit()])
+        # Appends the filename to the list excluding .jpg
+        labels.append(parsed[:-4])
+        i += 1
+
+    labels = np.array(labels)
+    # Convert the labels into a one hot vector (0 and 1s)
+    # Done to add a dimension and bc categorical data isn't usable
+    label_encoder = LabelEncoder()
+    integer_encoded = label_encoder.fit_transform(labels)
+    onehot_encoder = OneHotEncoder(sparse=False)
+    integer_encoded = integer_encoded.reshape(len(integer_encoded), 1)
+    onehot_encoded = onehot_encoder.fit_transform(integer_encoded)
+
+    return np.array(trainingImages), onehot_encoded
+
+
+# x = getData("training_set")
+
 
 # print(x.shape[0])
 # print(type(trainingData('testing_set')[0]))

@@ -2,11 +2,11 @@ import tensorflow as tf
 import tensorflow_datasets as tfds
 from tensorflow import keras
 import numpy as np
-from dataset import trainingData, trainingLabels
+from dataset import getData
 
 # Loading in the training data
-ds_train = trainingData("training_set")  # x variable
-training_labels = trainingLabels("training_set")  # y variable
+ds_train = getData("training_set")[0]  # x variable
+training_labels = getData("training_set")[1]  # y variable
 
 
 def formatVariable(x):
@@ -66,6 +66,6 @@ model = buildModel(ds_train, training_labels)
 
 
 # Testing the model
-# ds_test = trainingData("testing_set")
-# testing_labels = trainingLabels("testing_set")
+# ds_test = getData("testing_set")[0]  # x variable
+# testing_labels = getData("testing_set")[1]  # y variable
 # test = testModel(model, ds_test, testing_labels)

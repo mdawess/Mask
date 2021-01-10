@@ -1,2 +1,5 @@
 1. Make it a Convolutional NN
-2. 
+  - Need to decide on kernal size
+  - Fix: ValueError: Input 0 is incompatible with layer: expected ndim=4, found ndim=2 -> Need to add dimensions
+2. Change output layer from 2 -> 1 (May need to reorganize pictures etc)
+  - Need to convert to binary without 1 hot encoding (Should be very easy)

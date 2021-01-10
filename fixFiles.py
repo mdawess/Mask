@@ -3,7 +3,7 @@ from os import listdir
 from PIL import Image
 
 # Function to rename multiple files
-folder = r"C:/Users/Michael/OneDrive/Documents/GitHub/Mask/"
+folder = r"C:/Users/Michael/OneDrive/Documents/GitHub/Mask/testing_set"
 
 
 def renameFiles(folder):
@@ -54,4 +54,4 @@ def greyscale(folder):
         new_image.save(folder + '/' + filename)
 
 
-# greyscale(folder)
+greyscale(folder)

@@ -30,10 +30,14 @@ def buildModel(x, y):
     # Defining the model
     model = keras.models.Sequential()
     model.add(keras.layers.Flatten())
+
+    # Add conv2D
     model.add(keras.layers.Dense(12, activation='relu',))
     model.add(keras.layers.Dropout(0.4))
     model.add(keras.layers.Dense(8, activation='relu'))
     model.add(keras.layers.Dropout(0.4))
+
+    # Only need 1 output layer -> 1, 0
     model.add(keras.layers.Dense(2, activation='softmax'))
 
     # Defining the parameters of the model

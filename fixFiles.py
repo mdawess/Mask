@@ -3,7 +3,7 @@ from os import listdir
 from PIL import Image
 
 # Function to rename multiple files
-folder = r"C:/Users/Michael/OneDrive/Documents/GitHub/Mask/Incorrect"
+folder = r"C:/Users/Michael/OneDrive/Documents/GitHub/Mask/"
 
 
 def renameFiles(folder):
@@ -29,7 +29,7 @@ def resizeImages(folder, x, y):
         new_image.save(folder + '/' + filename)
 
 
-resizeImages(folder, 400, 400)
+# resizeImages(folder, 400, 400)
 
 
 def deleteFiles(folder, fileType):
@@ -44,6 +44,8 @@ def deleteFiles(folder, fileType):
 
 
 # deleteFiles(folder, ".jpg")
+
+
 def greyscale(folder):
     """Greyscales the image to decrease the memory usage."""
     for filename in listdir(folder):
@@ -52,4 +54,4 @@ def greyscale(folder):
         new_image.save(folder + '/' + filename)
 
 
-greyscale(folder)
+# greyscale(folder)

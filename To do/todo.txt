@@ -4,3 +4,27 @@
   - https://keras.io/api/layers/convolution_layers/convolution2d/
 2. Change output layer from 2 -> 1 (May need to reorganize pictures etc)
   - Need to convert to binary without 1 hot encoding (Should be very easy)
+
+
+Split:
+- Dataloader to get random images
+- CNN Layers -> Kernal size (2, 3, 4, 5), filter size -> Need to downsample within 2-3 layers
+  - Can decrease image size to 200x200
+- 2 layers convolution head, downsampling
+- Figure out how to get the output of true or false
+- Decide whether to train on colab
+
+* Need to put the correct and incorrect in 2 seperate folders -> Dataloaders
+- To downsample, use maxpooling to filter -> usually use values that are powers of 2 
+
+1. Make network
+2. Add dropouts -> to avoid overfitting 
+3. Add data augmentation -> change to Dataloader
+4. Design model
+5. Train multiple times -> do we need to save
+  - output grapth with matplotlib & save each graph
+  - Can save model and compare
+6. Evaluation -> Online w/ images never seen (100 images)
+7. Testing
+8. Batch normalization
+9. UI & Webcam

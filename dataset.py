@@ -57,6 +57,8 @@ def getData(folder):
     and the labels (y data) and returns both in that order.
      """
     files = [f for f in listdir(folder)]
+
+    # Can change once we have a data loader
     random_files = np.random.choice(files, int(len(files)))
 
     trainingImages = []

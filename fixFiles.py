@@ -54,4 +54,4 @@ def greyscale(folder):
         new_image.save(folder + '/' + filename)
 
 
-greyscale(folder)
+# greyscale(folder)
